@@ -39,13 +39,13 @@ class Hooks {
 			$out->addModules( 'ext.boilerPlate' );
 		}
 	}
+	
 	/**
 	 * Create a custom HTML tag for BoilerPlate.
 	 * @return string
 	 */
 	private static function createBoilerPlateTag() {
-		// You can customize the tag here as per your requirement
-		return '<a href="#" class="boilerplate-tag">Take Summary</a>';
+		// Retourne un bouton au lieu d'un lien
+		return '<button class="mw-htmlform-submit cdx-button cdx-button--weight-primary cdx-button--action-progressiveje">Take Summary</button>';
 	}
 }
-
