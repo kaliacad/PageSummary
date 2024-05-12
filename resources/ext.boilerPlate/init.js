@@ -1,6 +1,5 @@
-/**
- * @class mw.boilerPlate
- * @singleton
- */
-mw.boilerPlate = {
-};
+function logAndStoreURL() {
+    var currentPageURL = window.location.href;
+    console.log(currentPageURL);
+}
+logAndStoreURL();

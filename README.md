@@ -12,6 +12,7 @@
 
     PHP 7.2.
     A Wikimedia developer account.
+    MediaWiki >= 1.42.0"
 
 Clone the Page Summary Extension in the extension folder.
 

@@ -19,19 +19,33 @@
 
 namespace MediaWiki\Extension\BoilerPlate;
 
-class Hooks implements \MediaWiki\Hook\BeforePageDisplayHook {
+use OutputPage;
+use Skin;
+
+class Hooks {
 
 	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/BeforePageDisplay
-	 * @param \OutputPage $out
-	 * @param \Skin $skin
+	 * @param OutputPage $out
+	 * @param Skin $skin
 	 */
-	public function onBeforePageDisplay( $out, $skin ): void {
+	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ): void {
 		$config = $out->getConfig();
 		if ( $config->get( 'BoilerPlateVandalizeEachPage' ) ) {
 			$out->addModules( 'oojs-ui-core' );
-			$out->addHTML( \Html::element( 'p', [], 'BoilerPlate was here' ) );
+			$out->addHtml( self::createBoilerPlateTag() );
+	
+			// Ajoutez le module de ressources ici
+			$out->addModules( 'ext.boilerPlate' );
 		}
 	}
-
+	/**
+	 * Create a custom HTML tag for BoilerPlate.
+	 * @return string
+	 */
+	private static function createBoilerPlateTag() {
+		// You can customize the tag here as per your requirement
+		return '<a href="#" class="boilerplate-tag">Take Summary</a>';
+	}
 }
+
