@@ -9,7 +9,7 @@ async function takeSummary() {
 
   // Envoie de la requête à l'API
   
-  const API_KEY = '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';
+  const API_KEY = '';
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
   try {

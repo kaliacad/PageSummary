@@ -33,6 +33,12 @@ After cloning the repository:
     composer serve
 ```
 
+**cles d'activations**:
+```
+
+```
+
+
 ## Usage
 
 
