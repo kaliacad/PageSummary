@@ -9,7 +9,7 @@ logAndStoreURL();
 function takeSummary() {
   console.log("Le résumé a été pris !");
 }
-// const button = document.querySelector(".mw-htmlform-submit");
+// const button = document.querySelector(".mw-htmlform-submit"); resolve
 
 async function takeSummary() {
 
