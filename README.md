@@ -35,7 +35,7 @@ After cloning the repository:
 
 **cles d'activations**:
 ```
-
+https://api.openai.com/v1/chat/completions
 ```
 
 

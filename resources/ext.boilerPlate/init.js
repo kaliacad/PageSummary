@@ -10,7 +10,7 @@ async function takeSummary() {
   // Envoie de la requête à l'API
   
   const API_KEY = '';
-  const apiUrl = 'https://api.openai.com/v1/chat/completions';
+  const apiUrl = '';
 
   try {
     const response = await fetch(apiUrl, {
