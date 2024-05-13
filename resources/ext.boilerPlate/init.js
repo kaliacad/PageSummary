@@ -27,7 +27,8 @@ async function takeSummary() {
     });
     const data = await response.json();
 
-    console.log("La response de l'API est :", data.choices[0].message.content); // Récupération du text de la préponse de l'IA
+     if(data.choices)console.log("La response de l'API est :", data.choices[0].message.content); 
+    if(data.error)console.log("La response de l'API est :", data.error.message); // Récupération du text de la préponse de l'IA
     //Ici nous pouvons afficher la réponse dans le chat
   } catch (error) {
     console.error("Erreur lors de la requête de l'API :", error)
