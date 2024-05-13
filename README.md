@@ -33,6 +33,12 @@ After cloning the repository:
     composer serve
 ```
 
+**cles d'activations**:
+```
+https://api.openai.com/v1/chat/completions
+```
+
+
 ## Usage
 
 
