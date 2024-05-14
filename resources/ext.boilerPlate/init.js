@@ -1,3 +1,8 @@
+const link = document.createElement("a");
+link.innerText = "Page Summary";
+link.className = "page-summary";
+document.querySelector("#vector-page-tools").append(link);
+
 const logAndStoreURL = () => {
   const currentPageURL = window.location.href;
   console.log(currentPageURL);
@@ -83,7 +88,7 @@ async function takeSummary() {
   }
 }
 
-const button = document.querySelector(".mw-htmlform-submit");
+const button = document.querySelector(".page-summary");
 button.addEventListener("click", takeSummary);
 
 const div = document.createElement("div");

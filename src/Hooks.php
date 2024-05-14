@@ -22,30 +22,34 @@ namespace MediaWiki\Extension\BoilerPlate;
 use OutputPage;
 use Skin;
 
-class Hooks {
+class Hooks
+{
 
 	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/BeforePageDisplay
 	 * @param OutputPage $out
 	 * @param Skin $skin
 	 */
-	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ): void {
+	public static function onBeforePageDisplay(OutputPage $out, Skin $skin): void
+	{
 		$config = $out->getConfig();
-		if ( $config->get( 'BoilerPlateVandalizeEachPage' ) ) {
-			$out->addModules( 'oojs-ui-core' );
-			$out->addHtml( self::createBoilerPlateTag() );
-	
+		if ($config->get('BoilerPlateVandalizeEachPage')) {
+			$out->addModules('oojs-ui-core');
+			$out->addHtml(self::createBoilerPlateTag());
+
 			// Ajoutez le module de ressources ici
-			$out->addModules( 'ext.boilerPlate' );
+			$out->addModules('ext.boilerPlate');
 		}
 	}
-	
+
 	/**
 	 * Create a custom HTML tag for BoilerPlate.
 	 * @return string
 	 */
-	private static function createBoilerPlateTag() {
+	private static function createBoilerPlateTag()
+	{
 		// Retourne un bouton au lieu d'un lien
-		return '<button class="mw-htmlform-submit cdx-button cdx-button--weight-primary cdx-button--action-progressiveje">Take Summary</button>';
+		// return '<button class="mw-htmlform-submit cdx-button cdx-button--weight-primary cdx-button--action-progressiveje">Take Summary</button>';
+		return "";
 	}
 }
