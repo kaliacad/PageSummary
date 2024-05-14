@@ -87,3 +87,43 @@ const button = document.querySelector(".mw-htmlform-submit");
 button.addEventListener("click", takeSummary);
 
 const div = document.createElement("div");
+
+/* 
+Modification by Emmanuel 
+=========================
+==========================
+*/
+
+// Add trigger button to the right-hand menu
+function sendURLToAI(url) {
+  // Code to send the URL to the AI
+  // Using fetch er method to make the API request
+  // Example:
+  fetch("/api/url-summary", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ url }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // Handle the response from the AI
+      console.log("AI response:", data);
+    })
+    .catch((error) => {
+      console.error("Error sending URL to AI:", error);
+    });
+}
+
+const triggerButton = document.createElement("button");
+triggerButton.textContent = "Send URL to AI";
+triggerButton.style.backgroundColor = "blue";
+triggerButton.style.color = "white";
+triggerButton.addEventListener("click", () => {
+  const currentURL = logAndStoreURL();
+  sendURLToAI(currentURL);
+});
+
+const rightHandMenu = document.querySelector(".right-hand-menu"); // This must be replaced with the actual selector
+rightHandMenu.appendChild(triggerButton);
